@@ -14,11 +14,12 @@ class List extends Component {
       });
     });
   }
+
   render() {
     return (
       <div>
         {this.state.todoTasks.map(val => {
-          return <Item text={val} />;
+          return <Item text={val} deleteItem={this.deleteItem} />;
         })}
       </div>
     );

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import store, { LIST_ITEMS } from "../store";
+import store, { TODO_TASKS, DELETE_TASKS } from "../store";
 import List from "./List";
 
 class Mainpage extends Component {
@@ -13,7 +13,7 @@ class Mainpage extends Component {
   };
   handleClick = () => {
     const action = {
-      type: LIST_ITEMS,
+      type: TODO_TASKS,
       payload: this.state.inputText
     };
     store.dispatch(action);
@@ -22,8 +22,8 @@ class Mainpage extends Component {
   render() {
     return (
       <div>
-        <input placeholder="task here" onChange={this.handleChange} />
-        <button onClick={this.handleClick}> Add to List</button>
+        <input placeholder="todo item here" onChange={this.handleChange} />
+        <button onClick={this.handleClick}>Add to List</button>
         <List />
       </div>
     );
